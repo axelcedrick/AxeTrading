@@ -1,0 +1,18 @@
+{
+  "name": "atlas-audit-platform-and-provider",
+  "tags": {"project": "atlas", "phase": "audit"},
+  "max_concurrent_runs": 1,
+  "environments": [{"environment_key": "default", "spec": {"environment_version": "3", "dependencies": ["mlflow"]}}],
+  "tasks": [
+    {"task_key": "b4_write", "environment_key": "default",
+     "spark_python_task": {"python_file": "/Workspace/Users/axelcedrickaboua@gmail.com/atlas_audit/audit_platform.py", "parameters": ["b4"]}},
+    {"task_key": "b9_mlflow", "environment_key": "default",
+     "spark_python_task": {"python_file": "/Workspace/Users/axelcedrickaboua@gmail.com/atlas_audit/audit_platform.py", "parameters": ["b9"]}},
+    {"task_key": "b10_llm", "environment_key": "default",
+     "spark_python_task": {"python_file": "/Workspace/Users/axelcedrickaboua@gmail.com/atlas_audit/audit_platform.py", "parameters": ["b10"]}},
+    {"task_key": "b11_secrets", "environment_key": "default",
+     "spark_python_task": {"python_file": "/Workspace/Users/axelcedrickaboua@gmail.com/atlas_audit/audit_platform.py", "parameters": ["b11"]}},
+    {"task_key": "c_provider_main", "environment_key": "default", "depends_on": [{"task_key": "b11_secrets"}],
+     "spark_python_task": {"python_file": "/Workspace/Users/axelcedrickaboua@gmail.com/atlas_audit/audit_provider.py", "parameters": ["main"]}}
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "_audit": {
+    "label": "C4 XAU/USD 1h",
+    "endpoint": "time_series",
+    "params": {
+      "symbol": "XAU/USD",
+      "interval": "1h",
+      "outputsize": 2,
+      "timezone": "UTC"
+    },
+    "request_ts_utc": "2026-10-28T21:23:07.483762+00:00",
+    "http_status": 200,
+    "response_headers": {
+      "Date": "Wed, 28 Oct 2026 21:23:07 GMT",
+      "Content-Type": "application/json; charset=utf-8",
+      "Transfer-Encoding": "chunked",
+      "Connection": "keep-alive",
+      "Server": "cloudflare",
+      "Nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+      "Vary": "Accept-Encoding",
+      "Access-Control-Allow-Credentials": "true",
+      "Access-Control-Allow-Headers": "Content-Type, Accept-Encoding, Authorization, Accept, Origin, X-Requested-With, X-CSRF-TOKEN",
+      "Access-Control-Allow-Methods": "GET, OPTIONS",
+      "Access-Control-Allow-Origin": "*",
+      "Api-Credits-Left": "7",
+      "Api-Credits-Request": "1",
+      "Api-Credits-Used": "1",
+      "Api-Source-Node": "T",
+      "Content-Encoding": "gzip",
+      "cf-cache-status": "DYNAMIC",
+      "Report-To": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=k77jVa%2BTPNWsbsbPeF%2BT7mouPbHfR%2B6H421ssY%2FjrqBFlVfUA17ZyRXMFydTDXSG86CvsPMo5%2BqDYNKjA1%2BGrk5uwlYXPrC4s1wUhErwi%2BjkJDlghlD%2FZMHnfeF%2BnY%2FacOCU1w%3D%3D\"}]}",
+      "CF-RAY": "a51cfff3aca28305-CMH"
+    }
+  },
+  "payload": {
+    "meta": {
+      "symbol": "XAU/USD",
+      "interval": "1h",
+      "currency_base": "Gold Spot",
+      "currency_quote": "US Dollar",
+      "type": "Precious Metal"
+    },
+    "values": [
+      {
+        "datetime": "2026-10-28 21:00:00",
+        "open": "4067.85209",
+        "high": "4068.01725",
+        "low": "4067.35541",
+        "close": "4067.99176"
+      },
+      {
+        "datetime": "2026-10-28 20:00:00",
+        "open": "4068.98744",
+        "high": "4081.96587",
+        "low": "4056.13694",
+        "close": "4067.54097"
+      }
+    ],
+    "status": "ok"
+  }
+}

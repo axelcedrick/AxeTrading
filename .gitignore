@@ -1,0 +1,18 @@
+# Secrets et profils locaux
+.env
+.env.*
+*.pem
+.databrickscfg*
+.databricks/
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+.pytest_cache/
+*.egg-info/
+
+# Artefacts locaux
+mlruns/
+.ipynb_checkpoints/
+*.log

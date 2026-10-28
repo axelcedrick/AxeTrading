@@ -1,0 +1,68 @@
+{
+  "_audit": {
+    "label": "C5#1 EUR/USD",
+    "endpoint": "time_series",
+    "params": {
+      "symbol": "EUR/USD",
+      "interval": "1min",
+      "outputsize": 3,
+      "timezone": "UTC"
+    },
+    "request_ts_utc": "2026-10-28T21:23:18.771623+00:00",
+    "http_status": 200,
+    "response_headers": {
+      "Date": "Wed, 28 Oct 2026 21:23:18 GMT",
+      "Content-Type": "application/json; charset=utf-8",
+      "Transfer-Encoding": "chunked",
+      "Connection": "keep-alive",
+      "Server": "cloudflare",
+      "Nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+      "Vary": "Accept-Encoding",
+      "Access-Control-Allow-Credentials": "true",
+      "Access-Control-Allow-Headers": "Content-Type, Accept-Encoding, Authorization, Accept, Origin, X-Requested-With, X-CSRF-TOKEN",
+      "Access-Control-Allow-Methods": "GET, OPTIONS",
+      "Access-Control-Allow-Origin": "*",
+      "Api-Credits-Left": "6",
+      "Api-Credits-Request": "1",
+      "Api-Credits-Used": "2",
+      "Api-Source-Node": "T",
+      "Content-Encoding": "gzip",
+      "cf-cache-status": "DYNAMIC",
+      "Report-To": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=6xsH%2BYgEt2z29VgY2oHo%2FqUxeqYHjED%2BbyvCMgfh26EJ2HJnTCunY6o2XoO1%2FSFECrlRhu1RjzFcdPMCk4yggu3y6zJiqtxmSdhVko9GRciCbsrMetl7bq49H0Mr614lHZh5iA%3D%3D\"}]}",
+      "CF-RAY": "a51d003a2e98ad68-CMH"
+    }
+  },
+  "payload": {
+    "meta": {
+      "symbol": "EUR/USD",
+      "interval": "1min",
+      "currency_base": "Euro",
+      "currency_quote": "US Dollar",
+      "type": "Physical Currency"
+    },
+    "values": [
+      {
+        "datetime": "2026-10-28 21:21:00",
+        "open": "1.11547",
+        "high": "1.11554",
+        "low": "1.11537",
+        "close": "1.11552"
+      },
+      {
+        "datetime": "2026-10-28 21:20:00",
+        "open": "1.11546",
+        "high": "1.1155",
+        "low": "1.11539",
+        "close": "1.1155"
+      },
+      {
+        "datetime": "2026-10-28 21:19:00",
+        "open": "1.1155",
+        "high": "1.11552",
+        "low": "1.11539",
+        "close": "1.11541"
+      }
+    ],
+    "status": "ok"
+  }
+}

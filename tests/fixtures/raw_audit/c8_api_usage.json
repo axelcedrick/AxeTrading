@@ -1,0 +1,36 @@
+{
+  "_audit": {
+    "label": "C8 api_usage",
+    "endpoint": "api_usage",
+    "params": {},
+    "request_ts_utc": "2026-10-28T21:24:38.127845+00:00",
+    "http_status": 200,
+    "response_headers": {
+      "Date": "Wed, 28 Oct 2026 21:24:38 GMT",
+      "Content-Type": "application/json; charset=utf-8",
+      "Transfer-Encoding": "chunked",
+      "Connection": "keep-alive",
+      "Server": "cloudflare",
+      "Nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+      "Access-Control-Allow-Credentials": "true",
+      "Access-Control-Allow-Headers": "Content-Type, Accept-Encoding, Authorization, Accept, Origin, X-Requested-With, X-CSRF-TOKEN",
+      "Access-Control-Allow-Methods": "GET, OPTIONS",
+      "Access-Control-Allow-Origin": "*",
+      "Api-Credits-Left": "4",
+      "Api-Credits-Request": "1",
+      "Api-Credits-Used": "4",
+      "cf-cache-status": "DYNAMIC",
+      "Report-To": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=%2FkYY8oEQJ3vqiQwxzSQK0zC7BNFcd6WpmGW%2FuQGjMm5Q3dZNkuKWqBeSGYC1e0LvYnwueHogFNTwsW%2B%2Bjo9QR7MnrOXIfJJZyV%2FWV%2B7K6J0VG%2FA2fA2bEWGlUwqPG5xoCLo3iA%3D%3D\"}]}",
+      "Content-Encoding": "gzip",
+      "CF-RAY": "a51d022a2f38bd4a-CMH"
+    }
+  },
+  "payload": {
+    "timestamp": "2026-10-28 21:24:38",
+    "current_usage": 4,
+    "plan_limit": 8,
+    "daily_usage": 18,
+    "plan_daily_limit": 800,
+    "plan_category": "basic"
+  }
+}

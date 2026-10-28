@@ -1,0 +1,68 @@
+{
+  "_audit": {
+    "label": "C5#1 XAU/USD",
+    "endpoint": "time_series",
+    "params": {
+      "symbol": "XAU/USD",
+      "interval": "1min",
+      "outputsize": 3,
+      "timezone": "UTC"
+    },
+    "request_ts_utc": "2026-10-28T21:23:30.660258+00:00",
+    "http_status": 200,
+    "response_headers": {
+      "Date": "Wed, 28 Oct 2026 21:23:30 GMT",
+      "Content-Type": "application/json; charset=utf-8",
+      "Transfer-Encoding": "chunked",
+      "Connection": "keep-alive",
+      "Server": "cloudflare",
+      "Nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+      "Vary": "Accept-Encoding",
+      "Access-Control-Allow-Credentials": "true",
+      "Access-Control-Allow-Headers": "Content-Type, Accept-Encoding, Authorization, Accept, Origin, X-Requested-With, X-CSRF-TOKEN",
+      "Access-Control-Allow-Methods": "GET, OPTIONS",
+      "Access-Control-Allow-Origin": "*",
+      "Api-Credits-Left": "5",
+      "Api-Credits-Request": "1",
+      "Api-Credits-Used": "3",
+      "Api-Source-Node": "T",
+      "Content-Encoding": "gzip",
+      "cf-cache-status": "DYNAMIC",
+      "Report-To": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=XAuJ22VhJkd5O8K1s7%2FDHRyjAnSLgB71h9XgNS8zjaU39QoLQAkHBze6rsALrUCBVZUMunSJmX%2BY8CKW0ajboNhkFympKplWeVoiGTiszelVM1XP4NDg4UHmNjxB5zkx0nly%2Fg%3D%3D\"}]}",
+      "CF-RAY": "a51d00847f1bf485-CMH"
+    }
+  },
+  "payload": {
+    "meta": {
+      "symbol": "XAU/USD",
+      "interval": "1min",
+      "currency_base": "Gold Spot",
+      "currency_quote": "US Dollar",
+      "type": "Precious Metal"
+    },
+    "values": [
+      {
+        "datetime": "2026-10-28 21:22:00",
+        "open": "4067.90941",
+        "high": "4067.90941",
+        "low": "4067.6863",
+        "close": "4067.7098"
+      },
+      {
+        "datetime": "2026-10-28 21:21:00",
+        "open": "4067.81035",
+        "high": "4068.01725",
+        "low": "4067.81035",
+        "close": "4067.99176"
+      },
+      {
+        "datetime": "2026-10-28 21:20:00",
+        "open": "4067.65803",
+        "high": "4067.91744",
+        "low": "4067.65803",
+        "close": "4067.89071"
+      }
+    ],
+    "status": "ok"
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "_audit": {
+    "label": "C7 quote EUR/USD",
+    "endpoint": "quote",
+    "params": {
+      "symbol": "EUR/USD"
+    },
+    "request_ts_utc": "2026-10-28T21:24:27.159713+00:00",
+    "http_status": 200,
+    "response_headers": {
+      "Date": "Wed, 28 Oct 2026 21:24:27 GMT",
+      "Content-Type": "application/json; charset=utf-8",
+      "Transfer-Encoding": "chunked",
+      "Connection": "keep-alive",
+      "Server": "cloudflare",
+      "Nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+      "Vary": "Accept-Encoding",
+      "Access-Control-Allow-Credentials": "true",
+      "Access-Control-Allow-Headers": "Content-Type, Accept-Encoding, Authorization, Accept, Origin, X-Requested-With, X-CSRF-TOKEN",
+      "Access-Control-Allow-Methods": "GET, OPTIONS",
+      "Access-Control-Allow-Origin": "*",
+      "Api-Credits-Left": "5",
+      "Api-Credits-Request": "1",
+      "Api-Credits-Used": "3",
+      "Api-Source-Node": "T",
+      "Content-Encoding": "gzip",
+      "cf-cache-status": "DYNAMIC",
+      "Report-To": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=wMkpTp4bChqSkLSiO0M21Tn4eA4qz1iu224aBlNOwqBh80v%2BRMIpNNz5DV5i3pKAN%2BleDWTiA7ZySgncT2BRSMmMzNXmcGvBgPmS2INGcoB9mde5p2JczRMSDAtsmdS9Z94%2BTw%3D%3D\"}]}",
+      "CF-RAY": "a51d01e50af23a24-CMH"
+    }
+  },
+  "payload": {
+    "symbol": "EUR/USD",
+    "name": "Euro / US Dollar",
+    "exchange": "Forex",
+    "datetime": "2026-10-29",
+    "timestamp": 1793217600,
+    "last_quote_at": 1793222640,
+    "open": "1.11556",
+    "high": "1.11649",
+    "low": "1.11515",
+    "close": "1.11543",
+    "previous_close": "1.1156",
+    "change": "-0.00017000000",
+    "percent_change": "-0.015238437",
+    "is_market_open": true,
+    "fifty_two_week": {
+      "low": "1.11127",
+      "high": "1.20656",
+      "low_change": "0.0041600000",
+      "high_change": "-0.091130000",
+      "low_change_percent": "0.37434647",
+      "high_change_percent": "-7.55288",
+      "range": "1.111270 - 1.206560"
+    }
+  }
+}

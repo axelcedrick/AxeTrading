@@ -1,0 +1,61 @@
+{
+  "_audit": {
+    "label": "C4 EUR/USD 5min",
+    "endpoint": "time_series",
+    "params": {
+      "symbol": "EUR/USD",
+      "interval": "5min",
+      "outputsize": 2,
+      "timezone": "UTC"
+    },
+    "request_ts_utc": "2026-10-28T21:22:33.715384+00:00",
+    "http_status": 200,
+    "response_headers": {
+      "Date": "Wed, 28 Oct 2026 21:22:33 GMT",
+      "Content-Type": "application/json; charset=utf-8",
+      "Transfer-Encoding": "chunked",
+      "Connection": "keep-alive",
+      "Server": "cloudflare",
+      "Nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+      "Vary": "Accept-Encoding",
+      "Access-Control-Allow-Credentials": "true",
+      "Access-Control-Allow-Headers": "Content-Type, Accept-Encoding, Authorization, Accept, Origin, X-Requested-With, X-CSRF-TOKEN",
+      "Access-Control-Allow-Methods": "GET, OPTIONS",
+      "Access-Control-Allow-Origin": "*",
+      "Api-Credits-Left": "5",
+      "Api-Credits-Request": "1",
+      "Api-Credits-Used": "3",
+      "Api-Source-Node": "T",
+      "Content-Encoding": "gzip",
+      "cf-cache-status": "DYNAMIC",
+      "Report-To": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=ORYSi2kFQ7gSRoZ4gA7i3ZHP%2BPurfGjYQ2LDnZTYpNjLjeCJmMNgCBhX9TrM6%2BzVAnyWGBASekEGiP31EEfOy%2BZl%2BXovGR2WvvC%2B5VM8mvI8CdZvjHr7uO3%2BWcpnKzCp%2Fe%2FlDw%3D%3D\"}]}",
+      "CF-RAY": "a51cff209e55284b-CMH"
+    }
+  },
+  "payload": {
+    "meta": {
+      "symbol": "EUR/USD",
+      "interval": "5min",
+      "currency_base": "Euro",
+      "currency_quote": "US Dollar",
+      "type": "Physical Currency"
+    },
+    "values": [
+      {
+        "datetime": "2026-10-28 21:20:00",
+        "open": "1.11546",
+        "high": "1.11554",
+        "low": "1.11537",
+        "close": "1.11552"
+      },
+      {
+        "datetime": "2026-10-28 21:15:00",
+        "open": "1.11546",
+        "high": "1.11559",
+        "low": "1.11535",
+        "close": "1.11541"
+      }
+    ],
+    "status": "ok"
+  }
+}
