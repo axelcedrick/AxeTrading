@@ -1,0 +1,60 @@
+{
+  "_audit": {
+    "label": "C3 USD/CHF 15min",
+    "endpoint": "time_series",
+    "params": {
+      "symbol": "USD/CHF",
+      "interval": "15min",
+      "outputsize": 2
+    },
+    "request_ts_utc": "2026-10-28T21:22:10.737256+00:00",
+    "http_status": 200,
+    "response_headers": {
+      "Date": "Wed, 28 Oct 2026 21:22:10 GMT",
+      "Content-Type": "application/json; charset=utf-8",
+      "Transfer-Encoding": "chunked",
+      "Connection": "keep-alive",
+      "Server": "cloudflare",
+      "Nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+      "Vary": "Accept-Encoding",
+      "Access-Control-Allow-Credentials": "true",
+      "Access-Control-Allow-Headers": "Content-Type, Accept-Encoding, Authorization, Accept, Origin, X-Requested-With, X-CSRF-TOKEN",
+      "Access-Control-Allow-Methods": "GET, OPTIONS",
+      "Access-Control-Allow-Origin": "*",
+      "Api-Credits-Left": "7",
+      "Api-Credits-Request": "1",
+      "Api-Credits-Used": "1",
+      "Api-Source-Node": "T",
+      "Content-Encoding": "gzip",
+      "cf-cache-status": "DYNAMIC",
+      "Report-To": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=RyR06DQKwjVZB1pvRNCTRA1hcSPPXT7X6cw2c%2FdajIeTnbxjIGWKftlA%2FR8%2FOLOwwd4L9kjvuLW0q9IZ4x4vHHHsr1KY%2FPIhZ%2BpE1o81EyOE7pOPFQfDKtfDDGmOrOEL%2B07PvQ%3D%3D\"}]}",
+      "CF-RAY": "a51cfe90eb0c4603-CMH"
+    }
+  },
+  "payload": {
+    "meta": {
+      "symbol": "USD/CHF",
+      "interval": "15min",
+      "currency_base": "US Dollar",
+      "currency_quote": "Swiss Franc",
+      "type": "Physical Currency"
+    },
+    "values": [
+      {
+        "datetime": "2026-10-29 08:15:00",
+        "open": "0.82795",
+        "high": "0.82801",
+        "low": "0.82793",
+        "close": "0.82801"
+      },
+      {
+        "datetime": "2026-10-29 08:00:00",
+        "open": "0.82819",
+        "high": "0.82826",
+        "low": "0.82784",
+        "close": "0.82795"
+      }
+    ],
+    "status": "ok"
+  }
+}

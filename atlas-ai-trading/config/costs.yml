@@ -1,0 +1,51 @@
+# Hypothèses de coûts d'exécution, en pips (pip_size de config/universe.yml).
+# Chargées par atlas.common.config.load_costs.
+#
+# STATUT : VALEURS DE DÉPART PROPOSÉES, PRUDENTES, NON MESURÉES (source: hypothèse).
+# Le fournisseur ne donne ni bid ni ask (audit C7) : aucun spread n'a pu être mesuré.
+# À valider ou remplacer par l'utilisateur. Elles seront rappelées dans tout résultat de backtest.
+#
+# Séances de coûts en heures UTC fixes (simplification : le décalage d'une heure lié aux changements
+# d'heure n'est pas modélisé). Elles doivent couvrir les 24 h sans chevauchement.
+# Les bougies hors séance (calendrier de atlas.common.sessions) ne sont jamais négociables, quelle
+# que soit la séance de coûts.
+version: 1
+unit: pips
+
+sessions:
+  asia:     {start_utc: "21:00", end_utc: "07:00"}
+  london:   {start_utc: "07:00", end_utc: "12:00"}
+  overlap:  {start_utc: "12:00", end_utc: "16:00"}   # Londres + New York
+  new_york: {start_utc: "16:00", end_utc: "21:00"}
+
+assumptions:
+  # EUR/USD
+  - {instrument_id: EURUSD, session: asia,     spread_pips: 1.5, slippage_pips: 0.5, commission_pips: 0.0, source: hypothèse, valid_from: 2026-10-28}
+  - {instrument_id: EURUSD, session: london,   spread_pips: 1.0, slippage_pips: 0.5, commission_pips: 0.0, source: hypothèse, valid_from: 2026-10-28}
+  - {instrument_id: EURUSD, session: overlap,  spread_pips: 1.0, slippage_pips: 0.5, commission_pips: 0.0, source: hypothèse, valid_from: 2026-10-28}
+  - {instrument_id: EURUSD, session: new_york, spread_pips: 1.2, slippage_pips: 0.5, commission_pips: 0.0, source: hypothèse, valid_from: 2026-10-28}
+  # GBP/USD
+  - {instrument_id: GBPUSD, session: asia,     spread_pips: 2.5, slippage_pips: 0.8, commission_pips: 0.0, source: hypothèse, valid_from: 2026-10-28}
+  - {instrument_id: GBPUSD, session: london,   spread_pips: 1.5, slippage_pips: 0.7, commission_pips: 0.0, source: hypothèse, valid_from: 2026-10-28}
+  - {instrument_id: GBPUSD, session: overlap,  spread_pips: 1.5, slippage_pips: 0.7, commission_pips: 0.0, source: hypothèse, valid_from: 2026-10-28}
+  - {instrument_id: GBPUSD, session: new_york, spread_pips: 2.0, slippage_pips: 0.7, commission_pips: 0.0, source: hypothèse, valid_from: 2026-10-28}
+  # USD/JPY
+  - {instrument_id: USDJPY, session: asia,     spread_pips: 1.5, slippage_pips: 0.5, commission_pips: 0.0, source: hypothèse, valid_from: 2026-10-28}
+  - {instrument_id: USDJPY, session: london,   spread_pips: 1.2, slippage_pips: 0.5, commission_pips: 0.0, source: hypothèse, valid_from: 2026-10-28}
+  - {instrument_id: USDJPY, session: overlap,  spread_pips: 1.2, slippage_pips: 0.5, commission_pips: 0.0, source: hypothèse, valid_from: 2026-10-28}
+  - {instrument_id: USDJPY, session: new_york, spread_pips: 1.5, slippage_pips: 0.5, commission_pips: 0.0, source: hypothèse, valid_from: 2026-10-28}
+  # AUD/USD
+  - {instrument_id: AUDUSD, session: asia,     spread_pips: 1.5, slippage_pips: 0.6, commission_pips: 0.0, source: hypothèse, valid_from: 2026-10-28}
+  - {instrument_id: AUDUSD, session: london,   spread_pips: 1.5, slippage_pips: 0.6, commission_pips: 0.0, source: hypothèse, valid_from: 2026-10-28}
+  - {instrument_id: AUDUSD, session: overlap,  spread_pips: 1.5, slippage_pips: 0.6, commission_pips: 0.0, source: hypothèse, valid_from: 2026-10-28}
+  - {instrument_id: AUDUSD, session: new_york, spread_pips: 2.0, slippage_pips: 0.6, commission_pips: 0.0, source: hypothèse, valid_from: 2026-10-28}
+  # USD/CHF
+  - {instrument_id: USDCHF, session: asia,     spread_pips: 2.5, slippage_pips: 0.8, commission_pips: 0.0, source: hypothèse, valid_from: 2026-10-28}
+  - {instrument_id: USDCHF, session: london,   spread_pips: 1.8, slippage_pips: 0.7, commission_pips: 0.0, source: hypothèse, valid_from: 2026-10-28}
+  - {instrument_id: USDCHF, session: overlap,  spread_pips: 1.8, slippage_pips: 0.7, commission_pips: 0.0, source: hypothèse, valid_from: 2026-10-28}
+  - {instrument_id: USDCHF, session: new_york, spread_pips: 2.2, slippage_pips: 0.7, commission_pips: 0.0, source: hypothèse, valid_from: 2026-10-28}
+  # XAU/USD (pip = 0.01 USD, donc 35 pips = 0,35 USD par once)
+  - {instrument_id: XAUUSD, session: asia,     spread_pips: 45,  slippage_pips: 20,  commission_pips: 0.0, source: hypothèse, valid_from: 2026-10-28}
+  - {instrument_id: XAUUSD, session: london,   spread_pips: 35,  slippage_pips: 15,  commission_pips: 0.0, source: hypothèse, valid_from: 2026-10-28}
+  - {instrument_id: XAUUSD, session: overlap,  spread_pips: 30,  slippage_pips: 15,  commission_pips: 0.0, source: hypothèse, valid_from: 2026-10-28}
+  - {instrument_id: XAUUSD, session: new_york, spread_pips: 40,  slippage_pips: 15,  commission_pips: 0.0, source: hypothèse, valid_from: 2026-10-28}

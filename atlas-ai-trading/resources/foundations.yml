@@ -1,0 +1,57 @@
+# Jobs de la phase 2. Aucun planning : ils sont lancés à la demande.
+resources:
+  jobs:
+    atlas_setup:
+      name: atlas_setup_${var.catalog}
+      description: Crée catalogue, schémas, tables (sql/ddl) et alimente silver.instruments. Idempotent.
+      tags: {project: atlas, phase: "2"}
+      max_concurrent_runs: 1
+      environments:
+        - environment_key: default
+          spec:
+            environment_version: "3"
+            dependencies:
+              - ../dist/*.whl
+      tasks:
+        - task_key: ddl
+          environment_key: default
+          python_wheel_task:
+            package_name: atlas
+            entry_point: atlas-ddl
+            parameters: ["--catalog", "${var.catalog}", "--ddl-dir", "${workspace.file_path}/sql/ddl"]
+        - task_key: seed_instruments
+          depends_on: [{task_key: ddl}]
+          environment_key: default
+          python_wheel_task:
+            package_name: atlas
+            entry_point: atlas-seed-instruments
+            parameters: ["--catalog", "${var.catalog}", "--config-dir", "${workspace.file_path}/config"]
+
+    atlas_foundations_check:
+      name: atlas_foundations_check_${var.catalog}
+      description: Vérifie schémas, tables, configuration, accès au secret (sans l'afficher) et instruments.
+      tags: {project: atlas, phase: "2"}
+      max_concurrent_runs: 1
+      environments:
+        - environment_key: default
+          spec:
+            environment_version: "3"
+            dependencies:
+              - ../dist/*.whl
+      tasks:
+        - task_key: check
+          environment_key: default
+          python_wheel_task:
+            package_name: atlas
+            entry_point: atlas-foundations-check
+            parameters:
+              - "--catalog"
+              - "${var.catalog}"
+              - "--config-dir"
+              - "${workspace.file_path}/config"
+              - "--secret-scope"
+              - "${var.secret_scope}"
+              - "--secret-key"
+              - "${var.provider_secret_key}"
+              - "--target"
+              - "${bundle.target}"

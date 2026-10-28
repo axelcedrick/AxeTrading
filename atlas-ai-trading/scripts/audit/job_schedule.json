@@ -1,0 +1,11 @@
+{
+  "name": "atlas-audit-schedule-15min",
+  "tags": {"project": "atlas", "phase": "audit"},
+  "max_concurrent_runs": 1,
+  "schedule": {"quartz_cron_expression": "0 0/15 * * * ?", "timezone_id": "UTC", "pause_status": "UNPAUSED"},
+  "environments": [{"environment_key": "default", "spec": {"environment_version": "3"}}],
+  "tasks": [
+    {"task_key": "b5_write", "environment_key": "default",
+     "spark_python_task": {"python_file": "/Workspace/Users/axelcedrickaboua@gmail.com/atlas_audit/audit_platform.py", "parameters": ["b4"]}}
+  ]
+}

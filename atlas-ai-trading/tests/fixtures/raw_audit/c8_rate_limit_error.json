@@ -1,0 +1,37 @@
+{
+  "_audit": {
+    "label": "C8 burst 9",
+    "endpoint": "time_series",
+    "params": {
+      "symbol": "EUR/USD",
+      "interval": "1min",
+      "outputsize": 3,
+      "timezone": "UTC"
+    },
+    "request_ts_utc": "2026-10-28T21:32:21.648822+00:00",
+    "http_status": 429,
+    "response_headers": {
+      "Date": "Wed, 28 Oct 2026 21:32:21 GMT",
+      "Content-Type": "application/json; charset=utf-8",
+      "Content-Length": "257",
+      "Connection": "keep-alive",
+      "Server": "cloudflare",
+      "Nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+      "Access-Control-Allow-Credentials": "true",
+      "Access-Control-Allow-Headers": "Content-Type, Accept-Encoding, Authorization, Accept, Origin, X-Requested-With, X-CSRF-TOKEN",
+      "Access-Control-Allow-Methods": "GET, OPTIONS",
+      "Access-Control-Allow-Origin": "*",
+      "Api-Credits-Left": "0",
+      "Api-Credits-Request": "1",
+      "Api-Credits-Used": "9",
+      "cf-cache-status": "DYNAMIC",
+      "Report-To": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=wVKIEW2uwrEZiAptdnvnItcT%2FaN83NIKna9Z2JE5B3Lk72axj6UyynwtRC0Aqk9yEd%2FQTraBjpKBU4VwW0wWevBwd61uj3AHbpbkwAevoggbAIzsLSH40g7VR1CbBJj6Z0lhYg%3D%3D\"}]}",
+      "CF-RAY": "a51d0d7b2b7a70f3-CMH"
+    }
+  },
+  "payload": {
+    "code": 429,
+    "message": "You have run out of API credits for the current minute. 9 API credits were used, with the current limit being 8. Wait for the next minute or consider switching to a higher tier plan at https://twelvedata.com/pricing",
+    "status": "error"
+  }
+}

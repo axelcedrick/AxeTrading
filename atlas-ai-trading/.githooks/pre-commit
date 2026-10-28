@@ -1,0 +1,9 @@
+#!/bin/sh
+# Hook avant commit ATLAS : formatage, lint, recherche de secrets, tests rapides.
+# Activation (une fois, par l'utilisateur) : voir README.md.
+set -e
+cd "$(git rev-parse --show-toplevel)/atlas-ai-trading"
+echo "[pre-commit] ruff format --check"; uv run --frozen ruff format --check .
+echo "[pre-commit] ruff check";          uv run --frozen ruff check .
+echo "[pre-commit] secrets";             uv run --frozen python scripts/check_secrets.py
+echo "[pre-commit] pytest";              uv run --frozen pytest -q -x

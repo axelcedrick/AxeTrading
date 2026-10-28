@@ -1,0 +1,35 @@
+{
+  "_audit": {
+    "label": "C6 earliest EUR/USD 15min",
+    "endpoint": "earliest_timestamp",
+    "params": {
+      "symbol": "EUR/USD",
+      "interval": "15min"
+    },
+    "request_ts_utc": "2026-10-28T21:24:15.839807+00:00",
+    "http_status": 200,
+    "response_headers": {
+      "Date": "Wed, 28 Oct 2026 21:24:15 GMT",
+      "Content-Type": "application/json; charset=utf-8",
+      "Transfer-Encoding": "chunked",
+      "Connection": "keep-alive",
+      "Server": "cloudflare",
+      "Nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+      "Access-Control-Allow-Credentials": "true",
+      "Access-Control-Allow-Headers": "Content-Type, Accept-Encoding, Authorization, Accept, Origin, X-Requested-With, X-CSRF-TOKEN",
+      "Access-Control-Allow-Methods": "GET, OPTIONS",
+      "Access-Control-Allow-Origin": "*",
+      "Api-Credits-Left": "6",
+      "Api-Credits-Request": "1",
+      "Api-Credits-Used": "2",
+      "cf-cache-status": "DYNAMIC",
+      "Report-To": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=hA%2F0%2BfcX2vT8fkSycYzu9UGBCz9GKLK1BHUmM5TIsG%2F48Ui1Fo3hMBPCTlZFj%2BfGUh3x9MlMIK0cVzDpTlwD5KFOtohaL04YtXBMb%2F6AIQmNokTGpvYqr6SL805A66iYxXTFMQ%3D%3D\"}]}",
+      "Content-Encoding": "gzip",
+      "CF-RAY": "a51d019ebea48a31-CMH"
+    }
+  },
+  "payload": {
+    "datetime": "2020-01-30 18:00:00",
+    "unix_time": 1580367600
+  }
+}

@@ -1,0 +1,25 @@
+# Audit phase 1 (jetable) : bundle minimal pour tester validate / deploy / destroy.
+bundle:
+  name: atlas-audit-bundle
+
+workspace:
+  host: https://dbc-2ca00ccd-e312.cloud.databricks.com
+
+resources:
+  jobs:
+    atlas_audit_bundle_job:
+      name: atlas-audit-bundle-job
+      tags: {project: atlas, phase: audit}
+      environments:
+        - environment_key: default
+          spec: {environment_version: "3"}
+      tasks:
+        - task_key: hello
+          environment_key: default
+          spark_python_task:
+            python_file: ./src/hello.py
+
+targets:
+  dev:
+    mode: development
+    default: true

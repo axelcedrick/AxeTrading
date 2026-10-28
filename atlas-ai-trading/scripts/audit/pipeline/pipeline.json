@@ -1,0 +1,4 @@
+{"name": "atlas-audit-pipeline", "serverless": true, "continuous": false, "development": true,
+ "catalog": "atlas", "schema": "silver",
+ "libraries": [{"file": {"path": "/Workspace/Users/axelcedrickaboua@gmail.com/atlas_audit/audit_mv.sql"}}],
+ "tags": {"project": "atlas", "phase": "audit"}}

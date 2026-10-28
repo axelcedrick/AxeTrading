@@ -1,0 +1,48 @@
+[project]
+name = "atlas"
+version = "0.2.0"
+description = "ATLAS AI TRADING — recherche et aide à la décision intraday (analyse, alertes, paper trading ; aucun ordre réel)"
+requires-python = ">=3.12"
+dependencies = [
+    "pydantic==2.12.3",
+    "pyyaml==6.0.3",
+    "tzdata==2025.2",  # base des fuseaux horaires (absente de Windows)
+]
+
+[project.scripts]
+atlas-ddl = "atlas.jobs.ddl:main"
+atlas-seed-instruments = "atlas.jobs.seed_instruments:main"
+atlas-foundations-check = "atlas.jobs.foundations_check:main"
+
+[dependency-groups]
+dev = [
+    "pytest==8.4.2",
+    "ruff==0.14.2",
+]
+
+[build-system]
+requires = ["hatchling==1.27.0"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/atlas"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra --strict-markers"
+xfail_strict = true
+
+[tool.ruff]
+line-length = 110
+target-version = "py312"
+src = ["src", "tests", "scripts"]
+extend-exclude = ["scripts/audit"]
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP", "S", "DTZ"]
+ignore = ["S101"]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/**" = ["S", "DTZ001"]
+# SQL construit à partir de constantes du module et d'un catalogue validé par render()
+"src/atlas/jobs/seed_instruments.py" = ["S608"]
