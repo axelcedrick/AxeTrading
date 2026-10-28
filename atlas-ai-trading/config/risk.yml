@@ -1,0 +1,21 @@
+# Paramètres du moteur de risque. Chargés par atlas.common.config.load_risk.
+#
+# AUCUNE VALEUR PAR DÉFAUT : chaque champ doit être renseigné par l'utilisateur.
+# Tant qu'un champ vaut null, le chargement échoue (MissingValuesError) et le moteur de risque
+# refusera toute opération (CLAUDE.md §6).
+#
+# Les bornes indiquées sont des garde-fous de cohérence appliqués par le code, pas des recommandations.
+version: 1
+
+account_currency: null          # devise du capital fictif, code ISO (ex. EUR)
+paper_capital: null             # capital fictif du paper trading, > 0
+risk_per_trade_pct: null        # perte max si le stop est touché, en % du capital ; ]0 ; 5]
+max_total_open_risk_pct: null   # somme des risques des positions ouvertes, en % ; ]0 ; 20], >= risk_per_trade_pct
+max_daily_loss_pct: null        # perte journalière (UTC) au-delà de laquelle tout est bloqué, en % ; ]0 ; 20]
+max_leverage: null              # exposition notionnelle totale / capital ; ]0 ; 100]
+max_open_positions: null        # nombre de positions simultanées ; [1 ; 50]
+max_pair_correlation: null      # corrélation absolue max entre deux positions ouvertes ; [0 ; 1]
+max_spread_pct_of_stop: null    # spread estimé max, en % de la distance au stop ; ]0 ; 100]
+max_slippage_pct_of_stop: null  # slippage estimé max, en % de la distance au stop ; ]0 ; 100]
+max_signal_age_minutes: null    # au-delà, un signal est expiré ; [1 ; 1440]
+min_data_quality_score: null    # score de qualité des données minimal pour accepter un signal ; [0 ; 1]

@@ -1,0 +1,61 @@
+# Databricks Asset Bundle — ATLAS AI TRADING.
+# Un seul workspace (Free Edition), trois environnements séparés par catalogue (audit B2) :
+#   dev  -> atlas_dev  (cible par défaut, mode développement)
+#   test -> atlas_test
+#   prod -> atlas_prod (déployée UNIQUEMENT sur demande explicite de l'utilisateur)
+bundle:
+  name: atlas-ai-trading
+
+include:
+  - resources/*.yml
+
+variables:
+  catalog:
+    description: Catalogue Unity Catalog de l'environnement
+  schema_prefix:
+    description: Préfixe de schéma (vide, car un catalogue par environnement est possible ; audit B2)
+    default: ""
+  secret_scope:
+    description: Scope de secrets Databricks contenant la clé du fournisseur (créé par l'utilisateur, docs/secrets.md)
+    default: atlas
+  provider_secret_key:
+    description: Nom de la clé du fournisseur dans le scope
+    default: twelvedata_api_key
+  live_cron:
+    description: >-
+      Cadence des futurs jobs d'ingestion live (phase 3). Une minute après chaque quart d'heure,
+      pour laisser publier la bougie terminée (audit C5). Aucun job planifié en phase 2.
+    default: "0 1/15 * * * ?"
+
+artifacts:
+  atlas_wheel:
+    type: whl
+    build: uv build --wheel
+    path: .
+
+workspace:
+  host: https://dbc-2ca00ccd-e312.cloud.databricks.com
+
+targets:
+  dev:
+    mode: development
+    default: true
+    workspace:
+      profile: dbc-2ca00ccd-e312
+    variables:
+      catalog: atlas_dev
+
+  test:
+    workspace:
+      profile: dbc-2ca00ccd-e312
+      root_path: /Workspace/Users/${workspace.current_user.userName}/.bundle/${bundle.name}/test
+    variables:
+      catalog: atlas_test
+
+  prod:
+    mode: production
+    workspace:
+      profile: dbc-2ca00ccd-e312
+      root_path: /Workspace/Users/${workspace.current_user.userName}/.bundle/${bundle.name}/prod
+    variables:
+      catalog: atlas_prod

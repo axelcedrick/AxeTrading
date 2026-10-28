@@ -1,0 +1,98 @@
+# Univers du MVP (Forex + or). Chargé et validé par atlas.common.config.load_universe.
+#
+# STATUT : les valeurs de référence (pip_size, price_decimals, contract_unit, base_ccy, quote_ccy)
+# sont des PROPOSITIONS, « a_confirmer » tant que l'utilisateur ne les a pas validées.
+# Ne pas les présenter comme vérifiées. Passer reference_status à « valide » instrument par instrument.
+#
+# Constat de l'audit (C7) : le fournisseur renvoie 5 décimales pour tous les instruments, y compris
+# USD/JPY et XAU/USD. price_decimals désigne ici la précision de cotation usuelle, pas celle du flux.
+version: 1
+reference_values_status: a_confirmer
+
+intervals:
+  # Interrogés en production. Le 1 h n'est pas demandé au fournisseur : il est agrégé depuis le
+  # 15 min (ajustement validé à l'audit : 576 appels/jour au lieu de 720).
+  live: [15min]
+  derived:
+    1h: 15min
+  backfill: [5min, 15min, 1h]
+  backtest: [5min, 15min, 1h]
+
+instruments:
+  - instrument_id: EURUSD
+    symbol: EUR/USD
+    asset_class: FX
+    base_ccy: EUR
+    quote_ccy: USD
+    pip_size: 0.0001
+    price_decimals: 5
+    contract_unit: 100000        # lot standard, en devise de base
+    session_calendar_id: FX_24x5
+    provider_symbols: {twelvedata: EUR/USD}
+    is_active: true
+    reference_status: a_confirmer
+
+  - instrument_id: GBPUSD
+    symbol: GBP/USD
+    asset_class: FX
+    base_ccy: GBP
+    quote_ccy: USD
+    pip_size: 0.0001
+    price_decimals: 5
+    contract_unit: 100000
+    session_calendar_id: FX_24x5
+    provider_symbols: {twelvedata: GBP/USD}
+    is_active: true
+    reference_status: a_confirmer
+
+  - instrument_id: USDJPY
+    symbol: USD/JPY
+    asset_class: FX
+    base_ccy: USD
+    quote_ccy: JPY
+    pip_size: 0.01
+    price_decimals: 3
+    contract_unit: 100000
+    session_calendar_id: FX_24x5
+    provider_symbols: {twelvedata: USD/JPY}
+    is_active: true
+    reference_status: a_confirmer
+
+  - instrument_id: AUDUSD
+    symbol: AUD/USD
+    asset_class: FX
+    base_ccy: AUD
+    quote_ccy: USD
+    pip_size: 0.0001
+    price_decimals: 5
+    contract_unit: 100000
+    session_calendar_id: FX_24x5
+    provider_symbols: {twelvedata: AUD/USD}
+    is_active: true
+    reference_status: a_confirmer
+
+  - instrument_id: USDCHF
+    symbol: USD/CHF
+    asset_class: FX
+    base_ccy: USD
+    quote_ccy: CHF
+    pip_size: 0.0001
+    price_decimals: 5
+    contract_unit: 100000
+    session_calendar_id: FX_24x5
+    provider_symbols: {twelvedata: USD/CHF}
+    is_active: true
+    reference_status: a_confirmer
+
+  - instrument_id: XAUUSD
+    symbol: XAU/USD
+    asset_class: COMMODITY
+    base_ccy: XAU               # code ISO 4217 de l'once d'or
+    quote_ccy: USD
+    pip_size: 0.01              # convention variable selon les courtiers (0.01 ou 0.1) : à confirmer
+    price_decimals: 2
+    contract_unit: 100           # onces par lot standard
+    session_calendar_id: METALS_24x5
+    provider_symbols: {twelvedata: XAU/USD}
+    is_active: true
+    reference_status: a_confirmer

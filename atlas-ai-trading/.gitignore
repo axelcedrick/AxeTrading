@@ -16,3 +16,7 @@ __pycache__/
 mlruns/
 .ipynb_checkpoints/
 *.log
+
+# Build
+dist/
+build/
